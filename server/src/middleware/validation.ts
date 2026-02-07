@@ -1,0 +1,21 @@
+import { Request, Response, NextFunction } from 'express';
+import { Schema, ZodError } from 'zod';
+
+export const validate = (schema: Schema) => (req: Request, res: Response, next: NextFunction) => {
+    try {
+        schema.parse({
+            body: req.body,
+            query: req.query,
+            params: req.params,
+        });
+        next();
+    } catch (error) {
+        if (error instanceof ZodError) {
+            return res.status(400).json({
+                error: 'Validation Failed',
+                details: (error as ZodError).issues.map(e => ({ path: e.path, message: e.message }))
+            });
+        }
+        return res.status(500).json({ error: 'Internal Validation Error' });
+    }
+};

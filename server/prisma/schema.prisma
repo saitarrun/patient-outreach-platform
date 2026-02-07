@@ -1,0 +1,87 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "linux-arm64-openssl-1.1.x", "linux-arm64-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Tenant {
+  id           String   @id @default(uuid())
+  name         String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  patients     Patient[]
+  appointments Appointment[]
+  users        User[]
+  auditLogs    AuditLog[]
+}
+
+model Patient {
+  id           String        @id @default(uuid())
+  tenantId     String
+  tenant       Tenant        @relation(fields: [tenantId], references: [id])
+  firstName    String
+  lastName     String
+  email        String?
+  phone        String
+  dob          DateTime?
+  preferences  Json?         // e.g., { language: "en", quietHours: { start: "22:00", end: "08:00" } }
+  appointments Appointment[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@unique([tenantId, email]) // Email unique per tenant, not globally
+}
+
+model Appointment {
+  id        String     @id @default(uuid())
+  tenantId  String
+  tenant    Tenant     @relation(fields: [tenantId], references: [id])
+  patientId String
+  patient   Patient    @relation(fields: [patientId], references: [id])
+  date      DateTime
+  type      String     // e.g., "Check-up", "Virtual"
+  status    String     @default("SCHEDULED") // SCHEDULED, CONFIRMED, CANCELLED, COMPLETED
+  reminders Reminder[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model Reminder {
+  id            String      @id @default(uuid())
+  appointmentId String
+  appointment   Appointment @relation(fields: [appointmentId], references: [id])
+  type          String      // EMAIL, SMS
+  status        String      @default("PENDING") // PENDING, SENT, FAILED
+  scheduledAt   DateTime
+  sentAt        DateTime?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
+
+model User {
+  id        String   @id @default(uuid())
+  tenantId  String
+  tenant    Tenant   @relation(fields: [tenantId], references: [id])
+  email     String
+  role      String   @default("STAFF") // ADMIN, STAFF, READ_ONLY
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@unique([tenantId, email])
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  tenantId  String
+  tenant    Tenant   @relation(fields: [tenantId], references: [id])
+  userId    String?  // Optional: action might be system-generated or external
+  action    String   // CREATE_PATIENT, VIEW_PATIENT, SCHEDULE_APPT
+  resource  String   // Entity ID (PatientID, AppointmentID)
+  details   Json?
+  ipAddress String?
+  createdAt DateTime @default(now())
+}

@@ -1,0 +1,58 @@
+name: Client & Server CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Start Infrastructure (DB & Redis)
+      run: docker-compose up -d postgres redis
+
+    - name: Run Integration Tests
+      # We replicate the verified local command: run inside container to ensure env consistency
+      run: |
+        docker-compose run --rm server sh -c "cd server && npm install && npx prisma generate && npm run test"
+
+  deploy:
+    name: Deploy to AWS
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-west-1
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+
+    - name: Deploy Infrastructure
+      env:
+        # We assume secrets are set in GitHub
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      run: |
+        # Installation dependnecies for script
+        sudo apt-get install -y jq
+        
+        # Run deployment script non-interactively
+        # Note: You must set AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY secrets in GitHub Repo Settings
+        ./deploy_infra.sh
