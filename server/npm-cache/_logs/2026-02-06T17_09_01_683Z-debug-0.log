@@ -1,0 +1,396 @@
+0 verbose cli /Users/saitarrunpitta/Projects/node-v22.13.1-darwin-arm64/bin/node /Users/saitarrunpitta/Projects/node-v22.13.1-darwin-arm64/bin/npm
+1 info using npm@10.9.2
+2 info using node@v22.13.1
+3 silly config load:file:/Users/saitarrunpitta/Projects/node-v22.13.1-darwin-arm64/lib/node_modules/npm/npmrc
+4 warn config ignoring workspace config at /Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/.npmrc
+5 info config found workspace root at /Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform
+6 silly config load:file:/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/.npmrc
+7 silly config load:file:/Users/saitarrunpitta/.npmrc
+8 silly config load:file:/Users/saitarrunpitta/Projects/node-v22.13.1-darwin-arm64/etc/npmrc
+9 verbose title npm install ioredis @types/ioredis
+10 verbose argv "install" "ioredis" "@types/ioredis"
+11 verbose logfile logs-max:10 dir:/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/npm-cache/_logs/2026-02-06T17_09_01_683Z-
+12 verbose logfile /Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/npm-cache/_logs/2026-02-06T17_09_01_683Z-debug-0.log
+13 silly logfile done cleaning log files
+14 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+15 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: server
+16 silly idealTree buildDeps
+17 silly fetch manifest ioredis@*
+18 silly packumentCache full:https://registry.npmjs.org/ioredis cache-miss
+19 http fetch GET 200 https://registry.npmjs.org/npm 230ms
+20 http fetch GET 200 https://registry.npmjs.org/ioredis 188ms (cache miss)
+21 silly packumentCache full:https://registry.npmjs.org/ioredis set size:undefined disposed:false
+22 silly fetch manifest @types/ioredis@*
+23 silly packumentCache full:https://registry.npmjs.org/@types%2fioredis cache-miss
+24 http fetch GET 200 https://registry.npmjs.org/@types%2fioredis 62ms (cache miss)
+25 silly packumentCache full:https://registry.npmjs.org/@types%2fioredis set size:undefined disposed:false
+26 silly placeDep ROOT @types/ioredis@4.28.10 OK for: server@1.0.0 want: *
+27 silly placeDep ROOT ioredis@5.9.2 OK for: server@1.0.0 want: *
+28 silly fetch manifest @types/node@*
+29 silly packumentCache full:https://registry.npmjs.org/@types%2fnode cache-miss
+30 silly fetch manifest @ioredis/commands@1.5.0
+31 silly packumentCache full:https://registry.npmjs.org/@ioredis%2fcommands cache-miss
+32 silly fetch manifest cluster-key-slot@^1.1.0
+33 silly packumentCache full:https://registry.npmjs.org/cluster-key-slot cache-miss
+34 silly fetch manifest debug@^4.3.4
+35 silly packumentCache full:https://registry.npmjs.org/debug cache-miss
+36 silly fetch manifest denque@^2.1.0
+37 silly packumentCache full:https://registry.npmjs.org/denque cache-miss
+38 silly fetch manifest lodash.defaults@^4.2.0
+39 silly packumentCache full:https://registry.npmjs.org/lodash.defaults cache-miss
+40 silly fetch manifest lodash.isarguments@^3.1.0
+41 silly packumentCache full:https://registry.npmjs.org/lodash.isarguments cache-miss
+42 silly fetch manifest redis-errors@^1.2.0
+43 silly packumentCache full:https://registry.npmjs.org/redis-errors cache-miss
+44 silly fetch manifest redis-parser@^3.0.0
+45 silly packumentCache full:https://registry.npmjs.org/redis-parser cache-miss
+46 http fetch GET 200 https://registry.npmjs.org/@ioredis%2fcommands 76ms (cache miss)
+47 silly packumentCache full:https://registry.npmjs.org/@ioredis%2fcommands set size:undefined disposed:false
+48 silly fetch manifest standard-as-callback@^2.1.0
+49 silly packumentCache full:https://registry.npmjs.org/standard-as-callback cache-miss
+50 http fetch GET 200 https://registry.npmjs.org/standard-as-callback 100ms (cache miss)
+51 silly packumentCache full:https://registry.npmjs.org/standard-as-callback set size:undefined disposed:false
+52 http fetch GET 200 https://registry.npmjs.org/@types%2fnode 184ms (cache miss)
+53 silly packumentCache full:https://registry.npmjs.org/@types%2fnode set size:undefined disposed:false
+54 http fetch GET 200 https://registry.npmjs.org/lodash.defaults 247ms (cache miss)
+55 silly packumentCache full:https://registry.npmjs.org/lodash.defaults set size:undefined disposed:false
+56 http fetch GET 200 https://registry.npmjs.org/lodash.isarguments 248ms (cache miss)
+57 silly packumentCache full:https://registry.npmjs.org/lodash.isarguments set size:undefined disposed:false
+58 http fetch GET 200 https://registry.npmjs.org/redis-errors 248ms (cache miss)
+59 silly packumentCache full:https://registry.npmjs.org/redis-errors set size:undefined disposed:false
+60 http fetch GET 200 https://registry.npmjs.org/redis-parser 249ms (cache miss)
+61 silly packumentCache full:https://registry.npmjs.org/redis-parser set size:undefined disposed:false
+62 http fetch GET 200 https://registry.npmjs.org/cluster-key-slot 251ms (cache miss)
+63 silly packumentCache full:https://registry.npmjs.org/cluster-key-slot set size:undefined disposed:false
+64 http fetch GET 200 https://registry.npmjs.org/denque 251ms (cache miss)
+65 silly packumentCache full:https://registry.npmjs.org/denque set size:undefined disposed:false
+66 http fetch GET 200 https://registry.npmjs.org/debug 252ms (cache miss)
+67 silly packumentCache full:https://registry.npmjs.org/debug set size:undefined disposed:false
+68 silly placeDep ROOT @types/node@25.2.1 OK for: @types/ioredis@4.28.10 want: *
+69 silly fetch manifest undici-types@~7.16.0
+70 silly packumentCache full:https://registry.npmjs.org/undici-types cache-miss
+71 http fetch GET 200 https://registry.npmjs.org/undici-types 53ms (cache miss)
+72 silly packumentCache full:https://registry.npmjs.org/undici-types set size:undefined disposed:false
+73 silly placeDep ROOT undici-types@7.16.0 OK for: @types/node@25.2.1 want: ~7.16.0
+74 silly placeDep ROOT @ioredis/commands@1.5.0 OK for: ioredis@5.9.2 want: 1.5.0
+75 silly placeDep ROOT cluster-key-slot@1.1.2 OK for: ioredis@5.9.2 want: ^1.1.0
+76 silly placeDep ROOT debug@4.4.3 OK for: ioredis@5.9.2 want: ^4.3.4
+77 silly placeDep ROOT denque@2.1.0 OK for: ioredis@5.9.2 want: ^2.1.0
+78 silly placeDep ROOT lodash.defaults@4.2.0 OK for: ioredis@5.9.2 want: ^4.2.0
+79 silly placeDep ROOT lodash.isarguments@3.1.0 OK for: ioredis@5.9.2 want: ^3.1.0
+80 silly placeDep ROOT redis-errors@1.2.0 OK for: ioredis@5.9.2 want: ^1.2.0
+81 silly placeDep ROOT redis-parser@3.0.0 OK for: ioredis@5.9.2 want: ^3.0.0
+82 silly placeDep ROOT standard-as-callback@2.1.0 OK for: ioredis@5.9.2 want: ^2.1.0
+83 silly fetch manifest ms@^2.1.3
+84 silly packumentCache full:https://registry.npmjs.org/ms cache-miss
+85 http fetch GET 200 https://registry.npmjs.org/ms 41ms (cache miss)
+86 silly packumentCache full:https://registry.npmjs.org/ms set size:undefined disposed:false
+87 silly placeDep ROOT ms@2.1.3 OK for: debug@4.4.3 want: ^2.1.3
+88 silly reify mark retired [
+88 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/cluster-key-slot'
+88 silly reify ]
+89 silly reify mark retired [
+89 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/debug'
+89 silly reify ]
+90 silly reify mark retired [
+90 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/denque'
+90 silly reify ]
+91 silly reify mark retired [
+91 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/ioredis'
+91 silly reify ]
+92 silly reify mark retired [
+92 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/lodash.defaults'
+92 silly reify ]
+93 silly reify mark retired [
+93 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/lodash.isarguments'
+93 silly reify ]
+94 silly reify mark retired [
+94 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/ms'
+94 silly reify ]
+95 silly reify mark retired [
+95 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/redis-errors'
+95 silly reify ]
+96 silly reify mark retired [
+96 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/redis-parser'
+96 silly reify ]
+97 silly reify mark retired [
+97 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/standard-as-callback'
+97 silly reify ]
+98 silly reify mark retired [
+98 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/undici-types'
+98 silly reify ]
+99 silly reify mark retired [
+99 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/@ioredis/commands'
+99 silly reify ]
+100 silly reify mark retired [
+100 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/@types/node'
+100 silly reify ]
+101 silly reify moves {
+101 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/cluster-key-slot': '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/.cluster-key-slot-7LWtlSul',
+101 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/debug': '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/.debug-J16Tzeak',
+101 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/denque': '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/.denque-NFM3zxYJ',
+101 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/ioredis': '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/.ioredis-SVpQaYq1',
+101 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/lodash.defaults': '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/.lodash.defaults-p2AOM2sE',
+101 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/lodash.isarguments': '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/.lodash.isarguments-CGCnEIOr',
+101 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/ms': '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/.ms-oVPases0',
+101 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/redis-errors': '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/.redis-errors-dElkzjCf',
+101 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/redis-parser': '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/.redis-parser-Qj8Ije9w',
+101 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/standard-as-callback': '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/.standard-as-callback-TwspZOAS',
+101 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/undici-types': '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/.undici-types-MkWxWhZE',
+101 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/@ioredis/commands': '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/@ioredis/.commands-hZwDk6Eu',
+101 silly reify   '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/@types/node': '/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/node_modules/@types/.node-u6wuT5I9'
+101 silly reify }
+102 silly audit bulk request {
+102 silly audit   '@jridgewell/resolve-uri': [ '3.1.2' ],
+102 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+102 silly audit   '@jridgewell/trace-mapping': [ '0.3.9' ],
+102 silly audit   '@types/node': [ '25.2.1' ],
+102 silly audit   'brace-expansion': [ '1.1.12' ],
+102 silly audit   minimatch: [ '3.1.2' ],
+102 silly audit   semver: [ '7.7.3' ],
+102 silly audit   acorn: [ '8.15.0' ],
+102 silly audit   'balanced-match': [ '1.0.2' ],
+102 silly audit   'concat-map': [ '0.0.1' ],
+102 silly audit   debug: [ '4.4.3' ],
+102 silly audit   'detect-libc': [ '2.1.2' ],
+102 silly audit   fsevents: [ '2.3.3' ],
+102 silly audit   'glob-parent': [ '5.1.2' ],
+102 silly audit   'has-flag': [ '3.0.0' ],
+102 silly audit   'is-extglob': [ '2.1.1' ],
+102 silly audit   'is-glob': [ '4.0.3' ],
+102 silly audit   ms: [ '2.1.3' ],
+102 silly audit   picomatch: [ '2.3.1' ],
+102 silly audit   'supports-color': [ '5.5.0' ],
+102 silly audit   'undici-types': [ '7.16.0' ],
+102 silly audit   cookie: [ '0.7.2' ],
+102 silly audit   typescript: [ '5.9.3' ],
+102 silly audit   server: [ '1.0.0' ],
+102 silly audit   '@cspotcode/source-map-support': [ '0.8.1' ],
+102 silly audit   '@msgpackr-extract/msgpackr-extract-darwin-arm64': [ '3.0.3' ],
+102 silly audit   '@prisma/client': [ '5.22.0' ],
+102 silly audit   '@prisma/debug': [ '5.22.0' ],
+102 silly audit   '@prisma/engines': [ '5.22.0' ],
+102 silly audit   '@prisma/engines-version': [ '5.22.0-44.605197351a3c8bdd595af2d2a9bc3025bca48ea2' ],
+102 silly audit   '@prisma/fetch-engine': [ '5.22.0' ],
+102 silly audit   '@prisma/get-platform': [ '5.22.0' ],
+102 silly audit   '@tsconfig/node10': [ '1.0.12' ],
+102 silly audit   '@tsconfig/node12': [ '1.0.11' ],
+102 silly audit   '@tsconfig/node14': [ '1.0.3' ],
+102 silly audit   '@tsconfig/node16': [ '1.0.4' ],
+102 silly audit   '@types/body-parser': [ '1.19.6' ],
+102 silly audit   '@types/connect': [ '3.4.38' ],
+102 silly audit   '@types/cors': [ '2.8.19' ],
+102 silly audit   '@types/express': [ '5.0.6' ],
+102 silly audit   '@types/express-serve-static-core': [ '5.1.1' ],
+102 silly audit   '@types/http-errors': [ '2.0.5' ],
+102 silly audit   '@types/qs': [ '6.14.0' ],
+102 silly audit   '@types/range-parser': [ '1.2.7' ],
+102 silly audit   '@types/send': [ '1.2.1' ],
+102 silly audit   '@types/serve-static': [ '2.2.0' ],
+102 silly audit   accepts: [ '2.0.0' ],
+102 silly audit   'acorn-walk': [ '8.3.4' ],
+102 silly audit   anymatch: [ '3.1.3' ],
+102 silly audit   arg: [ '4.1.3' ],
+102 silly audit   'binary-extensions': [ '2.3.0' ],
+102 silly audit   'body-parser': [ '2.2.2' ],
+102 silly audit   braces: [ '3.0.3' ],
+102 silly audit   bullmq: [ '5.67.3' ],
+102 silly audit   bytes: [ '3.1.2' ],
+102 silly audit   'call-bind-apply-helpers': [ '1.0.2' ],
+102 silly audit   'call-bound': [ '1.0.4' ],
+102 silly audit   chokidar: [ '3.6.0' ],
+102 silly audit   'content-disposition': [ '1.0.1' ],
+102 silly audit   'content-type': [ '1.0.5' ],
+102 silly audit   'cookie-signature': [ '1.2.2' ],
+102 silly audit   cors: [ '2.8.6' ],
+102 silly audit   'create-require': [ '1.1.1' ],
+102 silly audit   'cron-parser': [ '4.9.0' ],
+102 silly audit   depd: [ '2.0.0' ],
+102 silly audit   diff: [ '4.0.4' ],
+102 silly audit   dotenv: [ '17.2.4' ],
+102 silly audit   'dunder-proto': [ '1.0.1' ],
+102 silly audit   'ee-first': [ '1.1.1' ],
+102 silly audit   encodeurl: [ '2.0.0' ],
+102 silly audit   'es-define-property': [ '1.0.1' ],
+102 silly audit   'es-errors': [ '1.3.0' ],
+102 silly audit   'es-object-atoms': [ '1.1.1' ],
+102 silly audit   'escape-html': [ '1.0.3' ],
+102 silly audit   etag: [ '1.8.1' ],
+102 silly audit   express: [ '5.2.1' ],
+102 silly audit   'fill-range': [ '7.1.1' ],
+102 silly audit   finalhandler: [ '2.1.1' ],
+102 silly audit   forwarded: [ '0.2.0' ],
+102 silly audit   fresh: [ '2.0.0' ],
+102 silly audit   'function-bind': [ '1.1.2' ],
+102 silly audit   'get-intrinsic': [ '1.3.0' ],
+102 silly audit   'get-proto': [ '1.0.1' ],
+102 silly audit   gopd: [ '1.2.0' ],
+102 silly audit   'has-symbols': [ '1.1.0' ],
+102 silly audit   hasown: [ '2.0.2' ],
+102 silly audit   'http-errors': [ '2.0.1' ],
+102 silly audit   'iconv-lite': [ '0.7.2' ],
+102 silly audit   'ignore-by-default': [ '1.0.1' ],
+102 silly audit   inherits: [ '2.0.4' ],
+102 silly audit   ioredis: [ '5.9.2' ],
+102 silly audit   'ipaddr.js': [ '1.9.1' ],
+102 silly audit   'is-binary-path': [ '2.1.0' ],
+102 silly audit   'is-number': [ '7.0.0' ],
+102 silly audit   'is-promise': [ '4.0.0' ],
+102 silly audit   luxon: [ '3.7.2' ],
+102 silly audit   'make-error': [ '1.3.6' ],
+102 silly audit   'math-intrinsics': [ '1.1.0' ],
+102 silly audit   'media-typer': [ '1.1.0' ],
+102 silly audit   'merge-descriptors': [ '2.0.0' ],
+102 silly audit   'mime-db': [ '1.54.0' ],
+102 silly audit   'mime-types': [ '3.0.2' ],
+102 silly audit   msgpackr: [ '1.11.5' ],
+102 silly audit   'msgpackr-extract': [ '3.0.3' ],
+102 silly audit   negotiator: [ '1.0.0' ],
+102 silly audit   'node-abort-controller': [ '3.1.1' ],
+102 silly audit   'node-gyp-build-optional-packages': [ '5.2.2' ],
+102 silly audit   nodemon: [ '3.1.11' ],
+102 silly audit   'normalize-path': [ '3.0.0' ],
+102 silly audit   'object-assign': [ '4.1.1' ],
+102 silly audit   'object-inspect': [ '1.13.4' ],
+102 silly audit   'on-finished': [ '2.4.1' ],
+102 silly audit   once: [ '1.4.0' ],
+102 silly audit   parseurl: [ '1.3.3' ],
+102 silly audit   'path-to-regexp': [ '8.3.0' ],
+102 silly audit   pg: [ '8.18.0' ],
+102 silly audit   'pg-cloudflare': [ '1.3.0' ],
+102 silly audit   'pg-connection-string': [ '2.11.0' ],
+102 silly audit   'pg-int8': [ '1.0.1' ],
+102 silly audit   'pg-pool': [ '3.11.0' ],
+102 silly audit   'pg-protocol': [ '1.11.0' ],
+102 silly audit   'pg-types': [ '2.2.0' ],
+102 silly audit   pgpass: [ '1.0.5' ],
+102 silly audit   'postgres-array': [ '2.0.0' ],
+102 silly audit   'postgres-bytea': [ '1.0.1' ],
+102 silly audit   'postgres-date': [ '1.0.7' ],
+102 silly audit   'postgres-interval': [ '1.2.0' ],
+102 silly audit   prisma: [ '5.22.0' ],
+102 silly audit   'proxy-addr': [ '2.0.7' ],
+102 silly audit   'pstree.remy': [ '1.1.8' ],
+102 silly audit   qs: [ '6.14.1' ],
+102 silly audit   'range-parser': [ '1.2.1' ],
+102 silly audit   'raw-body': [ '3.0.2' ],
+102 silly audit   readdirp: [ '3.6.0' ],
+102 silly audit   router: [ '2.2.0' ],
+102 silly audit   'safer-buffer': [ '2.1.2' ],
+102 silly audit   send: [ '1.2.1' ],
+102 silly audit   'serve-static': [ '2.2.1' ],
+102 silly audit   setprototypeof: [ '1.2.0' ],
+102 silly audit   'side-channel': [ '1.1.0' ],
+102 silly audit   'side-channel-list': [ '1.0.0' ],
+102 silly audit   'side-channel-map': [ '1.0.1' ],
+102 silly audit   'side-channel-weakmap': [ '1.0.2' ],
+102 silly audit   'simple-update-notifier': [ '2.0.0' ],
+102 silly audit   split2: [ '4.2.0' ],
+102 silly audit   statuses: [ '2.0.2' ],
+102 silly audit   'to-regex-range': [ '5.0.1' ],
+102 silly audit   toidentifier: [ '1.0.1' ],
+102 silly audit   touch: [ '3.1.1' ],
+102 silly audit   'ts-node': [ '10.9.2' ],
+102 silly audit   tslib: [ '2.8.1' ],
+102 silly audit   'type-is': [ '2.0.1' ],
+102 silly audit   undefsafe: [ '2.0.5' ],
+102 silly audit   unpipe: [ '1.0.0' ],
+102 silly audit   uuid: [ '11.1.0' ],
+102 silly audit   'v8-compile-cache-lib': [ '3.0.1' ],
+102 silly audit   vary: [ '1.1.2' ],
+102 silly audit   wrappy: [ '1.0.2' ],
+102 silly audit   xtend: [ '4.0.2' ],
+102 silly audit   yn: [ '3.1.1' ],
+102 silly audit   '@app/shared': [ '1.0.0' ],
+102 silly audit   '@types/ioredis': [ '4.28.10' ],
+102 silly audit   '@ioredis/commands': [ '1.5.0' ],
+102 silly audit   'cluster-key-slot': [ '1.1.2' ],
+102 silly audit   denque: [ '2.1.0' ],
+102 silly audit   'lodash.defaults': [ '4.2.0' ],
+102 silly audit   'lodash.isarguments': [ '3.1.0' ],
+102 silly audit   'redis-errors': [ '1.2.0' ],
+102 silly audit   'redis-parser': [ '3.0.0' ],
+102 silly audit   'standard-as-callback': [ '2.1.0' ]
+102 silly audit }
+103 http cache ms@https://registry.npmjs.org/ms/-/ms-2.1.3.tgz 0ms (cache hit)
+104 http cache standard-as-callback@https://registry.npmjs.org/standard-as-callback/-/standard-as-callback-2.1.0.tgz 0ms (cache hit)
+105 http cache lodash.isarguments@https://registry.npmjs.org/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz 0ms (cache hit)
+106 http cache denque@https://registry.npmjs.org/denque/-/denque-2.1.0.tgz 0ms (cache hit)
+107 http cache redis-parser@https://registry.npmjs.org/redis-parser/-/redis-parser-3.0.0.tgz 0ms (cache hit)
+108 http cache lodash.defaults@https://registry.npmjs.org/lodash.defaults/-/lodash.defaults-4.2.0.tgz 0ms (cache hit)
+109 http cache cluster-key-slot@https://registry.npmjs.org/cluster-key-slot/-/cluster-key-slot-1.1.2.tgz 0ms (cache hit)
+110 http cache debug@https://registry.npmjs.org/debug/-/debug-4.4.3.tgz 0ms (cache hit)
+111 http cache undici-types@https://registry.npmjs.org/undici-types/-/undici-types-7.16.0.tgz 0ms (cache hit)
+112 http cache ioredis@https://registry.npmjs.org/ioredis/-/ioredis-5.9.2.tgz 0ms (cache hit)
+113 http cache @types/node@https://registry.npmjs.org/@types/node/-/node-25.2.1.tgz 0ms (cache hit)
+114 http cache @types/ioredis@https://registry.npmjs.org/@types/ioredis/-/ioredis-4.28.10.tgz 0ms (cache hit)
+115 http cache @ioredis/commands@https://registry.npmjs.org/@ioredis/commands/-/commands-1.5.0.tgz 0ms (cache hit)
+116 http cache redis-errors@https://registry.npmjs.org/redis-errors/-/redis-errors-1.2.0.tgz 0ms (cache hit)
+117 silly tarball no local data for ms@https://registry.npmjs.org/ms/-/ms-2.1.3.tgz. Extracting by manifest.
+118 silly tarball no local data for standard-as-callback@https://registry.npmjs.org/standard-as-callback/-/standard-as-callback-2.1.0.tgz. Extracting by manifest.
+119 silly tarball no local data for lodash.isarguments@https://registry.npmjs.org/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz. Extracting by manifest.
+120 silly tarball no local data for denque@https://registry.npmjs.org/denque/-/denque-2.1.0.tgz. Extracting by manifest.
+121 silly tarball no local data for redis-parser@https://registry.npmjs.org/redis-parser/-/redis-parser-3.0.0.tgz. Extracting by manifest.
+122 silly tarball no local data for lodash.defaults@https://registry.npmjs.org/lodash.defaults/-/lodash.defaults-4.2.0.tgz. Extracting by manifest.
+123 silly tarball no local data for cluster-key-slot@https://registry.npmjs.org/cluster-key-slot/-/cluster-key-slot-1.1.2.tgz. Extracting by manifest.
+124 silly tarball no local data for debug@https://registry.npmjs.org/debug/-/debug-4.4.3.tgz. Extracting by manifest.
+125 silly tarball no local data for undici-types@https://registry.npmjs.org/undici-types/-/undici-types-7.16.0.tgz. Extracting by manifest.
+126 silly tarball no local data for ioredis@https://registry.npmjs.org/ioredis/-/ioredis-5.9.2.tgz. Extracting by manifest.
+127 silly tarball no local data for @types/node@https://registry.npmjs.org/@types/node/-/node-25.2.1.tgz. Extracting by manifest.
+128 silly tarball no local data for @types/ioredis@https://registry.npmjs.org/@types/ioredis/-/ioredis-4.28.10.tgz. Extracting by manifest.
+129 silly tarball no local data for @ioredis/commands@https://registry.npmjs.org/@ioredis/commands/-/commands-1.5.0.tgz. Extracting by manifest.
+130 silly tarball no local data for redis-errors@https://registry.npmjs.org/redis-errors/-/redis-errors-1.2.0.tgz. Extracting by manifest.
+131 http fetch GET 200 https://registry.npmjs.org/debug/-/debug-4.4.3.tgz 56ms (cache miss)
+132 http fetch GET 200 https://registry.npmjs.org/denque/-/denque-2.1.0.tgz 56ms (cache miss)
+133 http fetch GET 200 https://registry.npmjs.org/lodash.defaults/-/lodash.defaults-4.2.0.tgz 58ms (cache miss)
+134 http fetch GET 200 https://registry.npmjs.org/standard-as-callback/-/standard-as-callback-2.1.0.tgz 59ms (cache miss)
+135 http fetch GET 200 https://registry.npmjs.org/ms/-/ms-2.1.3.tgz 60ms (cache miss)
+136 http fetch GET 200 https://registry.npmjs.org/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz 60ms (cache miss)
+137 http fetch GET 200 https://registry.npmjs.org/redis-parser/-/redis-parser-3.0.0.tgz 60ms (cache miss)
+138 http fetch GET 200 https://registry.npmjs.org/cluster-key-slot/-/cluster-key-slot-1.1.2.tgz 70ms (cache miss)
+139 http fetch GET 200 https://registry.npmjs.org/undici-types/-/undici-types-7.16.0.tgz 163ms (cache miss)
+140 http fetch GET 200 https://registry.npmjs.org/redis-errors/-/redis-errors-1.2.0.tgz 166ms (cache miss)
+141 http fetch GET 200 https://registry.npmjs.org/@types/ioredis/-/ioredis-4.28.10.tgz 167ms (cache miss)
+142 http fetch GET 200 https://registry.npmjs.org/ioredis/-/ioredis-5.9.2.tgz 174ms (cache miss)
+143 http fetch GET 200 https://registry.npmjs.org/@ioredis/commands/-/commands-1.5.0.tgz 174ms (cache miss)
+144 http fetch GET 200 https://registry.npmjs.org/@types/node/-/node-25.2.1.tgz 229ms (cache miss)
+145 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 285ms
+146 silly audit report {}
+147 silly ADD node_modules/ms
+148 silly ADD node_modules/standard-as-callback
+149 silly ADD node_modules/redis-parser
+150 silly ADD node_modules/redis-errors
+151 silly ADD node_modules/lodash.isarguments
+152 silly ADD node_modules/lodash.defaults
+153 silly ADD node_modules/denque
+154 silly ADD node_modules/debug
+155 silly ADD node_modules/cluster-key-slot
+156 silly ADD node_modules/@ioredis/commands
+157 silly ADD node_modules/undici-types
+158 silly ADD node_modules/@types/node
+159 silly ADD node_modules/ioredis
+160 silly ADD node_modules/@types/ioredis
+161 silly REMOVE server/node_modules/@types/node
+162 silly REMOVE server/node_modules/@ioredis/commands
+163 silly REMOVE server/node_modules/undici-types
+164 silly REMOVE server/node_modules/standard-as-callback
+165 silly REMOVE server/node_modules/redis-parser
+166 silly REMOVE server/node_modules/redis-errors
+167 silly REMOVE server/node_modules/ms
+168 silly REMOVE server/node_modules/lodash.isarguments
+169 silly REMOVE server/node_modules/lodash.defaults
+170 silly REMOVE server/node_modules/ioredis
+171 silly REMOVE server/node_modules/denque
+172 silly REMOVE server/node_modules/debug
+173 silly REMOVE server/node_modules/cluster-key-slot
+174 verbose cwd /Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server
+175 verbose os Darwin 25.2.0
+176 verbose node v22.13.1
+177 verbose npm  v10.9.2
+178 notice
+178 notice New major version of npm available! 10.9.2 -> 11.9.0
+178 notice Changelog: https://github.com/npm/cli/releases/tag/v11.9.0
+178 notice To update run: npm install -g npm@11.9.0
+178 notice  { force: true, [Symbol(proc-log.meta)]: true }
+179 verbose exit 0
+180 info ok

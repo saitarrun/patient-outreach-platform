@@ -1,0 +1,20 @@
+0 verbose cli /Users/saitarrunpitta/Projects/node-v22.13.1-darwin-arm64/bin/node /Users/saitarrunpitta/Projects/node-v22.13.1-darwin-arm64/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.13.1
+3 silly config load:file:/Users/saitarrunpitta/Projects/node-v22.13.1-darwin-arm64/lib/node_modules/npm/npmrc
+4 warn config ignoring workspace config at /Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/.npmrc
+5 info config found workspace root at /Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform
+6 silly config load:file:/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/.npmrc
+7 silly config load:file:/Users/saitarrunpitta/.npmrc
+8 silly config load:file:/Users/saitarrunpitta/Projects/node-v22.13.1-darwin-arm64/etc/npmrc
+9 verbose title npm exec tsc --noEmit
+10 verbose argv "exec" "--" "tsc" "--noEmit"
+11 verbose logfile logs-max:10 dir:/Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/npm-cache/_logs/2026-02-06T17_19_26_099Z-
+12 verbose logfile /Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server/npm-cache/_logs/2026-02-06T17_19_26_099Z-debug-0.log
+13 silly logfile done cleaning log files
+14 verbose cwd /Users/saitarrunpitta/Projects/Patient Outreach and Appointment Reminder Platform/server
+15 verbose os Darwin 25.2.0
+16 verbose node v22.13.1
+17 verbose npm  v10.9.2
+18 verbose exit 2
+19 verbose code 2
