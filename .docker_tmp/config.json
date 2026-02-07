@@ -1,6 +1,1 @@
-{
-	"auths": {
-		"018858881263.dkr.ecr.us-west-1.amazonaws.com": {}
-	},
-	"credsStore": "osxkeychain"
-}
+{"auths":{}}

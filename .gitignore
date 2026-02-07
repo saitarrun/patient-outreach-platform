@@ -6,5 +6,6 @@ coverage
 .terraform/
 .terraform.lock.hcl
 *.tfstate
-*.tfstate.backupche
+*.tfstate.backup
+deploy.envche
 tmp
