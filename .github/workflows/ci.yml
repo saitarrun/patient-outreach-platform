@@ -28,7 +28,8 @@ jobs:
 
     - name: Run Integration Tests
       # Use built image dependencies directly
-      run: docker-compose run --rm server npm run test --workspace=server
+      run: |
+        docker-compose run --rm server sh -c "ls -la node_modules/.bin && npm run test --workspace=server"
 
   deploy:
     name: Deploy to AWS
