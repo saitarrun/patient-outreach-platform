@@ -1,5 +1,9 @@
 # Patient Outreach and Appointment Reminder Platform
 
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![CI/CD](https://github.com/saitarrun/patient-outreach-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/saitarrun/patient-outreach-platform/actions/workflows/ci.yml)
+
 A comprehensive platform for managing patient outreach and automated appointment reminders. This full-stack application utilizes a modern tech stack to ensure reliability, scalability, and ease of use.
 
 ## Features
