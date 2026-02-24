@@ -19,6 +19,7 @@ async function main() {
             data: {
                 tenantId: tenant.id,
                 email: 'admin@demo.com',
+                password: 'admin123',
                 role: 'ADMIN'
             }
         });
@@ -28,6 +29,7 @@ async function main() {
             data: {
                 tenantId: tenant.id,
                 email: 'staff@demo.com',
+                password: 'staff123',
                 role: 'STAFF'
             }
         });
@@ -37,13 +39,13 @@ async function main() {
         // Ensure Users Exist for demo
         const admin = await prisma.user.findFirst({ where: { email: 'admin@demo.com', tenantId: existing.id } });
         if (!admin) {
-            const u = await prisma.user.create({ data: { tenantId: existing.id, email: 'admin@demo.com', role: 'ADMIN' } });
+            const u = await prisma.user.create({ data: { tenantId: existing.id, email: 'admin@demo.com', password: 'admin123', role: 'ADMIN' } });
             console.log(`Created Admin: ${u.id}`);
         }
 
         const staff = await prisma.user.findFirst({ where: { email: 'staff@demo.com', tenantId: existing.id } });
         if (!staff) {
-            const u = await prisma.user.create({ data: { tenantId: existing.id, email: 'staff@demo.com', role: 'STAFF' } });
+            const u = await prisma.user.create({ data: { tenantId: existing.id, email: 'staff@demo.com', password: 'staff123', role: 'STAFF' } });
             console.log(`Created Staff: ${u.id}`);
         }
     }

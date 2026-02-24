@@ -29,6 +29,10 @@ app.use(limiter);
 app.use(cors());
 app.use(express.json());
 
+app.get('/health', (req, res) => {
+    res.json({ status: 'ok' });
+});
+
 app.get('/metrics', async (req, res) => {
     try {
         res.set('Content-Type', register.contentType);
@@ -37,6 +41,10 @@ app.get('/metrics', async (req, res) => {
         res.status(500).end(ex);
     }
 });
+
+// Auth routes (public - no tenant middleware)
+import authRoutes from './routes/authRoutes';
+app.use('/api/auth', authRoutes);
 
 import { tenantMiddlewareAsync } from './middleware/tenant';
 app.use(tenantMiddlewareAsync);
@@ -48,12 +56,7 @@ app.use('/api/patients', patientRoutes);
 app.use('/api/patients', patientRoutes);
 app.use('/api/appointments', appointmentRoutes);
 
-import authRoutes from './routes/authRoutes';
-app.use('/api/auth', authRoutes);
 
-app.get('/health', (req, res) => {
-    res.json({ status: 'ok' });
-});
 
 const start = async () => {
     try {

@@ -4,6 +4,40 @@ import { AuthenticatedRequest } from '../middleware/tenant';
 
 const prisma = new PrismaClient();
 
+export const adminLogin = async (req: Request, res: Response) => {
+    try {
+        const { email, password } = req.body;
+
+        if (!email || !password) {
+            return res.status(400).json({ error: "Email and password required" });
+        }
+
+        // Find user by email
+        const user = await prisma.user.findFirst({
+            where: { email }
+        });
+
+        if (!user) {
+            return res.status(401).json({ error: "Invalid credentials" });
+        }
+
+        // Check password (plaintext for demo - upgrade to bcrypt for production)
+        if (user.password !== password) {
+            return res.status(401).json({ error: "Invalid credentials" });
+        }
+
+        // Return user data (excluding password)
+        res.json({
+            id: user.id,
+            email: user.email,
+            role: user.role
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Login failed" });
+    }
+};
+
 export const patientLogin = async (req: Request, res: Response) => {
     try {
         const tenantId = (req as AuthenticatedRequest).tenantId;

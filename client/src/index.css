@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+@layer base {
+    body {
+        @apply antialiased bg-slate-900 text-slate-100;
+    }
+}
+
+/* Custom Scrollbar for Glassmorphism */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Utilities for glass effects if needed additionally, but Tailwind classes cover most */
+.glass-panel {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl;
+}
