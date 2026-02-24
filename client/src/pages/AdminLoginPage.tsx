@@ -26,77 +26,69 @@ const AdminLoginPage: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-slate-900 font-sans text-slate-100 overflow-hidden relative selection:bg-cyan-500/30">
-            {/* Background Gradients */}
-            <div className="fixed inset-0 z-0 pointer-events-none">
-                <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-blue-600/20 rounded-full blur-[120px] mix-blend-screen" />
-                <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-purple-600/20 rounded-full blur-[120px] mix-blend-screen" />
+        <div className="min-h-screen flex items-center justify-center bg-[#0B0F19] font-sans text-slate-200 p-6 selection:bg-indigo-500/30">
+            {/* Subtle Gradient Backdrop */}
+            <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+                <div className="w-full h-full max-w-4xl mx-auto opacity-30 mix-blend-screen"
+                    style={{ background: 'radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 60%)' }} />
             </div>
 
-            <div className="relative z-10 w-full max-w-md px-6">
-                {/* Glass Login Card */}
-                <div className="bg-white/5 backdrop-blur-2xl rounded-[2.5rem] shadow-2xl p-8 md:p-10 border border-white/10 relative overflow-hidden group">
+            <div className="relative z-10 w-full max-w-[420px]">
+                {/* Minimalist Card */}
+                <div className="bg-[#111827]/80 backdrop-blur-2xl rounded-3xl shadow-2xl shadow-indigo-500/10 p-10 border border-white/10 relative overflow-hidden">
 
-                    {/* Inner highlight */}
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 opacity-50" />
+                    {/* Subtle Top Border Highlight */}
+                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-50" />
 
-                    {/* Logo & Title */}
+                    {/* Logo & Header */}
                     <div className="text-center mb-10">
-                        <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-3xl mb-6 shadow-lg shadow-cyan-500/30 transform group-hover:scale-105 transition-transform duration-500">
-                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="inline-flex items-center justify-center w-14 h-14 bg-indigo-500/10 border border-indigo-500/20 rounded-2xl mb-6">
+                            <svg className="w-7 h-7 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                             </svg>
                         </div>
-                        <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Heart Blooms</h1>
-                        <p className="text-blue-200/60 font-light">Admin Access Portal</p>
+                        <h1 className="text-2xl font-bold text-white tracking-tight mb-1.5">Welcome Back</h1>
+                        <p className="text-sm text-slate-400">Sign in to the Heart Blooms portal</p>
                     </div>
 
-                    {/* Error Message */}
+                    {/* Error Alert */}
                     {error && (
-                        <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl backdrop-blur-sm animate-pulse">
-                            <p className="text-sm text-red-300 flex items-center justify-center font-medium">
-                                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                {error}
-                            </p>
+                        <div className="mb-6 p-4 bg-rose-500/10 border border-rose-500/20 rounded-xl flex items-center text-sm text-rose-400 font-medium">
+                            <svg className="w-5 h-5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            {error}
                         </div>
                     )}
 
-                    {/* Login Form */}
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Form */}
+                    <form onSubmit={handleSubmit} className="space-y-5">
                         <div className="space-y-4">
                             <div>
-                                <label htmlFor="email" className="sr-only">Email Address</label>
-                                <div className="relative group/input">
-                                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <svg className="w-5 h-5 text-blue-300/50 group-focus-within/input:text-cyan-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" /></svg>
-                                    </div>
+                                <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-1.5">Email Address</label>
+                                <div className="relative">
                                     <input
                                         id="email"
                                         type="email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         required
-                                        className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-blue-200/30 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-transparent transition-all backdrop-blur-sm"
+                                        className="w-full px-4 py-3 bg-[#0B0F19] border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all text-sm"
                                         placeholder="admin@demo.com"
                                     />
                                 </div>
                             </div>
 
                             <div>
-                                <label htmlFor="password" className="sr-only">Password</label>
-                                <div className="relative group/input">
-                                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <svg className="w-5 h-5 text-blue-300/50 group-focus-within/input:text-cyan-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                                    </div>
+                                <label htmlFor="password" className="block text-sm font-medium text-slate-300 mb-1.5">Password</label>
+                                <div className="relative">
                                     <input
                                         id="password"
                                         type="password"
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
                                         required
-                                        className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-blue-200/30 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-transparent transition-all backdrop-blur-sm"
+                                        className="w-full px-4 py-3 bg-[#0B0F19] border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all text-sm"
                                         placeholder="••••••••"
                                     />
                                 </div>
@@ -106,42 +98,31 @@ const AdminLoginPage: React.FC = () => {
                         <button
                             type="submit"
                             disabled={isLoading}
-                            className="w-full group relative py-4 rounded-2xl font-bold text-white shadow-lg overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-[1.02] active:scale-[0.98]"
+                            className="w-full mt-2 flex items-center justify-center py-3 px-4 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-xl shadow-sm shadow-indigo-500/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-0.5"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 transition-all group-hover:brightness-110" />
-                            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out skew-x-12" />
-
-                            <span className="relative flex items-center justify-center gap-3">
-                                {isLoading ? (
-                                    <>
-                                        <svg className="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
-                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                        </svg>
-                                        Signing in...
-                                    </>
-                                ) : (
-                                    <>
-                                        Sign In
-                                        <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-                                    </>
-                                )}
-                            </span>
+                            {isLoading ? (
+                                <>
+                                    <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    Signing in...
+                                </>
+                            ) : (
+                                'Sign In'
+                            )}
                         </button>
                     </form>
 
-                    {/* Demo Credentials Hint */}
-                    <div className="mt-8 text-center bg-white/5 rounded-2xl p-4 border border-white/5">
-                        <p className="text-xs text-blue-200/60 uppercase tracking-widest mb-1">Demo Credentials</p>
-                        <p className="text-sm font-mono text-cyan-300">
-                            admin@demo.com <span className="text-blue-200/30 mx-2">|</span> admin123
-                        </p>
+                    {/* Hint */}
+                    <div className="mt-8 text-center text-xs text-slate-500">
+                        <p>Demo: <span className="text-slate-300 font-mono bg-white/5 py-0.5 px-1.5 rounded">admin@demo.com</span> / <span className="text-slate-300 font-mono bg-white/5 py-0.5 px-1.5 rounded">admin123</span></p>
                     </div>
                 </div>
 
                 {/* Footer */}
-                <p className="text-center text-xs text-blue-200/30 mt-8 font-light">
-                    Heart Blooms Platform © 2026
+                <p className="text-center text-xs text-slate-500 mt-6">
+                    &copy; 2026 Heart Blooms Platform
                 </p>
             </div>
         </div>

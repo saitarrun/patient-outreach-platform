@@ -29,115 +29,99 @@ export default function Layout() {
     ];
 
     return (
-        <div className="min-h-screen bg-slate-900 font-sans text-slate-100 overflow-hidden relative selection:bg-cyan-500/30">
-            {/* Background Gradients */}
-            <div className="fixed inset-0 z-0 pointer-events-none">
-                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-600/30 rounded-full blur-[120px] mix-blend-screen" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-purple-600/30 rounded-full blur-[120px] mix-blend-screen" />
-                <div className="absolute top-[20%] left-[30%] w-[40%] h-[40%] bg-cyan-500/20 rounded-full blur-[100px] mix-blend-screen" />
-            </div>
+        <div className="flex h-screen bg-[#0B0F19] font-sans text-slate-200 overflow-hidden relative selection:bg-indigo-500/30">
+            {/* Subtle Top Ambient Light */}
+            <div className="absolute top-[-20%] left-[20%] w-[60%] h-[50%] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
 
-            <div className="relative z-10 flex h-screen p-4 gap-4">
-                {/* Glass Sidebar */}
-                <div className="w-20 lg:w-72 flex-shrink-0 flex flex-col rounded-[2rem] bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden">
-                    {/* Logo Area */}
-                    <div className="h-24 flex items-center justify-center lg:justify-start lg:px-8">
-                        <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/25">
-                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </div>
-                        <span className="hidden lg:block ml-4 text-xl font-bold text-white tracking-wide">
-                            Heart Blooms
-                        </span>
+            {/* Sidebar (Slimmer, Solid/Glass mix) */}
+            <aside className="relative flex w-64 flex-col bg-[#111827]/80 backdrop-blur-3xl border-r border-white/5 z-20 transition-all duration-300">
+                {/* Logo Area */}
+                <div className="flex h-16 items-center px-6 border-b border-white/5">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-500 shadow-sm shadow-indigo-500/20">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
                     </div>
+                    <span className="ml-3 text-sm font-semibold tracking-wide text-slate-100">
+                        Heart Blooms
+                    </span>
+                </div>
 
-                    {/* Navigation */}
-                    <nav className="flex-1 px-4 py-4 space-y-2 overflow-y-auto custom-scrollbar">
-                        {navigation.map((item) => {
-                            const isActive = location.pathname === item.href;
-                            return (
-                                <Link
-                                    key={item.name}
-                                    to={item.href}
-                                    className={`
-                                        flex items-center px-4 py-4 rounded-2xl transition-all duration-300 group relative overflow-hidden
-                                        ${isActive
-                                            ? 'bg-blue-500/20 text-white shadow-lg shadow-blue-500/10 after:absolute after:left-0 after:top-0 after:h-full after:w-1 after:bg-cyan-400'
-                                            : 'text-slate-400 hover:bg-white/5 hover:text-white'}
-                                    `}
-                                >
-                                    <div className={`
-                                        relative z-10 p-1 rounded-lg transition-transform duration-300 group-hover:scale-110 
-                                        ${isActive ? 'text-cyan-300' : 'text-current'}
-                                    `}>
-                                        {item.icon}
-                                    </div>
-                                    <span className="hidden lg:block ml-3 font-medium tracking-wide relative z-10">
-                                        {item.name}
-                                    </span>
-                                </Link>
-                            );
-                        })}
-                    </nav>
-
-                    {/* User Profile */}
-                    <div className="p-4 mt-auto">
-                        <div className="flex items-center p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-white/20 transition-all cursor-pointer group">
-                            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold shadow-lg shadow-cyan-500/20">
-                                {user?.email?.[0].toUpperCase() || 'A'}
-                            </div>
-                            <div className="hidden lg:block ml-3 overflow-hidden">
-                                <p className="text-sm font-medium text-white truncate group-hover:text-cyan-200 transition-colors">
-                                    {user?.email || 'Admin User'}
-                                </p>
-                                <p className="text-xs text-slate-400 truncate">Administrator</p>
-                            </div>
-                            <button
-                                onClick={logout}
-                                className="hidden lg:block ml-auto text-slate-400 hover:text-red-400 p-2 hover:bg-white/5 rounded-full transition-colors"
+                {/* Navigation Links */}
+                <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-4 custom-scrollbar">
+                    {navigation.map((item) => {
+                        const isActive = location.pathname === item.href;
+                        return (
+                            <Link
+                                key={item.name}
+                                to={item.href}
+                                className={`
+                                    group flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200
+                                    ${isActive
+                                        ? 'bg-indigo-500/10 text-indigo-300'
+                                        : 'text-slate-400 hover:bg-white/5 hover:text-slate-200'}
+                                `}
                             >
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                                </svg>
-                            </button>
+                                <div className={`mr-3 transition-colors ${isActive ? 'text-indigo-400' : 'text-slate-500 group-hover:text-slate-300'}`}>
+                                    {item.icon}
+                                </div>
+                                {item.name}
+                                {isActive && (
+                                    <span className="ml-auto w-1 h-4 rounded-full bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                                )}
+                            </Link>
+                        );
+                    })}
+                </nav>
+
+                {/* User Footer Profile */}
+                <div className="border-t border-white/5 p-4 bg-[#111827]/40">
+                    <div className="flex items-center gap-3">
+                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 border border-white/10 text-xs font-semibold text-slate-300">
+                            {user?.email?.[0].toUpperCase() || 'A'}
                         </div>
+                        <div className="flex-1 min-w-0">
+                            <p className="truncate text-sm font-medium text-slate-200">{user?.email || 'admin@demo.com'}</p>
+                            <p className="truncate text-xs text-slate-500">Administrator</p>
+                        </div>
+                        <button
+                            onClick={logout}
+                            className="p-1.5 text-slate-500 hover:text-rose-400 hover:bg-white/5 rounded-md transition-colors"
+                            title="Log Out"
+                        >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
+            </aside>
 
-                {/* Main Content Area */}
-                <div className="flex-1 flex flex-col min-w-0 rounded-[2rem] bg-white/5 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden relative">
-                    {/* Inner Gradient Overlay for Depth */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
+            {/* Main Content Pane */}
+            <main className="flex-1 flex flex-col min-w-0 relative z-10 bg-transparent">
+                {/* Sticky Header */}
+                <header className="flex h-16 shrink-0 items-center justify-between border-b border-white/5 bg-[#0B0F19]/80 backdrop-blur-xl px-8 z-30">
+                    <div>
+                        <h1 className="text-lg font-semibold text-slate-100">
+                            {navigation.find(n => n.href === location.pathname)?.name || 'Dashboard'}
+                        </h1>
+                    </div>
+                    <div className="flex items-center gap-4">
+                        <button className="relative p-2 text-slate-400 hover:text-slate-200 transition-colors">
+                            <span className="absolute top-2 right-2.5 h-1.5 w-1.5 rounded-full bg-rose-500 ring-4 ring-[#0B0F19]"></span>
+                            <span className="sr-only">View notifications</span>
+                            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                            </svg>
+                        </button>
+                    </div>
+                </header>
 
-                    {/* Glass Header */}
-                    <header className="h-20 flex-shrink-0 flex items-center justify-between px-8 relative z-20">
-                        <div>
-                            <h1 className="text-2xl font-bold text-white tracking-tight drop-shadow-sm">
-                                {navigation.find(n => n.href === location.pathname)?.name || 'Dashboard'}
-                            </h1>
-                            <p className="text-xs text-slate-300 mt-1 flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)] animate-pulse"></span>
-                                Live System Status
-                            </p>
-                        </div>
-
-                        <div className="flex items-center gap-4">
-                            <button className="relative p-3 text-slate-200 hover:text-white hover:bg-white/10 rounded-full transition-all">
-                                <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-red-500 rounded-full shadow-lg shadow-red-500/50"></span>
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                                </svg>
-                            </button>
-                        </div>
-                    </header>
-
-                    {/* Scrollable Page Content */}
-                    <main className="flex-1 overflow-y-auto p-4 lg:p-8 relative z-20 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
-                        <Outlet />
-                    </main>
+                {/* Page Content Viewport */}
+                <div className="flex-1 overflow-auto p-8 custom-scrollbar relative z-10">
+                    <Outlet />
                 </div>
-            </div>
+            </main>
         </div>
     );
 }
