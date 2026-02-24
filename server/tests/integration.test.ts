@@ -11,6 +11,8 @@ describe('Integration Tests', () => {
 
     beforeAll(async () => {
         // 1. Cleanup
+        await prisma.auditLog.deleteMany();
+        await prisma.reminder.deleteMany();
         await prisma.appointment.deleteMany();
         await prisma.patient.deleteMany();
         await prisma.user.deleteMany();
