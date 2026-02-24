@@ -8,9 +8,7 @@ import PatientLoginPage from './pages/PatientLoginPage';
 import PatientDashboardPage from './pages/PatientDashboardPage';
 import AdminLoginPage from './pages/AdminLoginPage';
 
-function Dashboard() {
-  return <h2 className="text-2xl font-bold">Dashboard</h2>;
-}
+import AdminDashboardPage from './pages/AdminDashboardPage';
 
 function App() {
   return (
@@ -29,7 +27,7 @@ function App() {
 
           {/* Protected Admin Routes */}
           <Route element={<ProtectedRoute><Layout /></ProtectedRoute>}>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={<AdminDashboardPage />} />
             <Route path="patients" element={<PatientsPage />} />
             <Route path="appointments" element={<AppointmentsPage />} />
           </Route>
