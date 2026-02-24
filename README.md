@@ -62,19 +62,31 @@ npm install
 
 Ensure you have the necessary environment variables set up. Check `.env.example` if available, or refer to `docker-compose.yml` for required variables.
 
-### 4. Running the Application
+### 4. Running the Application (Local Deployment)
 
-You can run the application using Docker Compose for a complete environment setup:
+We provide a specialized script to launch a complete, production-like environment locally on your own machine. This is the recommended alternative to deploying to an external cloud provider like AWS.
 
 ```bash
-docker-compose up --build
+# Run the automated local deployment script
+./deploy_local.sh
 ```
 
-Access the services at:
+**What this does:**
+- Builds the client and server Docker containers.
+- Starts PostgreSQL and Redis infrastructure.
+- Automatically handles Prisma database schema migrations.
+- Starts the entire application stack including Prometheus and Grafana.
+
+**Access the services at:**
 - **Client**: http://localhost:80
 - **Server**: http://localhost:3000
 - **Grafana**: http://localhost:3001
 - **Prometheus**: http://localhost:9090
+
+To stop your local deployment, run:
+```bash
+docker-compose down
+```
 
 ### 5. Development Mode
 
