@@ -37,7 +37,7 @@ echo "✅ Database is ready!"
 # 4. Push Database Schema (Migrate)
 echo "🔄 Migrating Database Schema..."
 # We temporarily run the server container just to push the schema
-docker compose run --rm server npx prisma db push
+docker compose run --rm server sh -c "cd server && npx prisma db push"
 
 # 5. Start all services
 echo "🌐 Starting full application stack..."
