@@ -109,7 +109,7 @@ const PatientLoginPage = () => {
 
                         <button
                             type="submit"
-                            className="w-full mt-2 flex items-center justify-center py-3 px-4 bg-teal-600 hover:bg-teal-500 text-white text-sm font-semibold rounded-xl shadow-sm shadow-teal-500/30 transition-all hover:-translate-y-0.5"
+                            className="w-full mt-2 flex items-center justify-center py-3 px-4 bg-teal-600 hover:bg-teal-500 hover:shadow-lg hover:shadow-teal-500/40 hover:-translate-y-0.5 active:translate-y-0 active:shadow-sm text-white text-sm font-semibold rounded-xl shadow-sm shadow-teal-500/30 transition-all hover:-translate-y-0.5"
                         >
                             Sign In
                         </button>
