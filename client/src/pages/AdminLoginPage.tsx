@@ -98,7 +98,7 @@ const AdminLoginPage: React.FC = () => {
                         <button
                             type="submit"
                             disabled={isLoading}
-                            className="w-full mt-2 flex items-center justify-center py-3 px-4 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-xl shadow-sm shadow-indigo-500/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-0.5"
+                            className="w-full mt-2 flex items-center justify-center py-3 px-4 bg-indigo-600 hover:bg-indigo-500 hover:shadow-lg hover:shadow-indigo-500/40 hover:-translate-y-0.5 active:translate-y-0 active:shadow-sm transition-all duration-300 ease-out text-white text-sm font-semibold rounded-xl shadow-sm shadow-indigo-500/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-0.5"
                         >
                             {isLoading ? (
                                 <>
