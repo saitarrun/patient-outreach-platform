@@ -10,9 +10,17 @@ import { AuthenticatedRequest } from '../middleware/tenant';
 export const getAppointments = async (req: Request, res: Response) => {
     try {
         const tenantId = (req as AuthenticatedRequest).tenantId;
+        const patientId = req.query.patientId as string | undefined;
+
+        const whereClause: any = { tenant: { id: tenantId } };
+        if (patientId) {
+            whereClause.patientId = patientId;
+        }
+
         const appointments = await prisma.appointment.findMany({
-            where: { tenant: { id: tenantId } },
+            where: whereClause,
             include: { patient: true },
+            orderBy: { date: 'asc' }
         });
         res.json(appointments);
     } catch (error) {

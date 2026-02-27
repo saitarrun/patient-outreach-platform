@@ -85,6 +85,8 @@ const PatientLoginPage = () => {
                                         value={phone}
                                         onChange={(e) => setPhone(e.target.value)}
                                         required
+                                        aria-required="true"
+                                        aria-label="Phone Number"
                                         className="w-full px-4 py-3 bg-[#0B0F19] border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500/50 transition-all text-sm"
                                         placeholder="(555) 123-4567"
                                     />
@@ -100,6 +102,8 @@ const PatientLoginPage = () => {
                                         value={dob}
                                         onChange={(e) => setDob(e.target.value)}
                                         required
+                                        aria-required="true"
+                                        aria-label="Date of Birth"
                                         className="w-full px-4 py-3 bg-[#0B0F19] border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500/50 transition-all text-sm"
                                         style={{ colorScheme: 'dark' }}
                                     />

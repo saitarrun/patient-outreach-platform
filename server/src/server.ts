@@ -51,10 +51,11 @@ app.use(tenantMiddlewareAsync);
 
 import patientRoutes from './routes/patientRoutes';
 import appointmentRoutes from './routes/appointmentRoutes';
+import dashboardRoutes from './routes/dashboardRoutes';
 
 app.use('/api/patients', patientRoutes);
-app.use('/api/patients', patientRoutes);
 app.use('/api/appointments', appointmentRoutes);
+app.use('/api/dashboard', dashboardRoutes);
 
 
 
