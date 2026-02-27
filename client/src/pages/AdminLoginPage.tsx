@@ -73,6 +73,8 @@ const AdminLoginPage: React.FC = () => {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         required
+                                        aria-required="true"
+                                        aria-label="Email Address"
                                         className="w-full px-4 py-3 bg-[#0B0F19] border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all text-sm"
                                         placeholder="admin@demo.com"
                                     />
@@ -88,6 +90,8 @@ const AdminLoginPage: React.FC = () => {
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
                                         required
+                                        aria-required="true"
+                                        aria-label="Password"
                                         className="w-full px-4 py-3 bg-[#0B0F19] border border-white/10 rounded-xl text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all text-sm"
                                         placeholder="••••••••"
                                     />
